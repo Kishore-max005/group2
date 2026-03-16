@@ -1,4 +1,4 @@
-package com.example.tracker.model;
+package com.expense.tracker.model;
 
 import jakarta.persistence.*;
 
@@ -9,15 +9,23 @@ public class Expense {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String title;
     private double amount;
     private String category;
-    private String description;
     private String date;
 
     public Expense() {}
 
     public Long getId() {
         return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public double getAmount() {
@@ -34,14 +42,6 @@ public class Expense {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getDate() {
