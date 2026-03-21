@@ -24,4 +24,24 @@ public class ExpenseController {
     public Expense addExpense(@RequestBody Expense expense) {
         return expenseRepository.save(expense);
     }
+    @DeleteMapping("/{id}")
+    public void deleteExpense(@PathVariable Long id){
+        expenseRepository.deleteById(id);
+    }
+
+    @GetMapping("/total")
+    public double getTotal(){
+        return expenseRepository.findAll()
+            .stream()
+            .mapToDouble(Expense::getAmount)
+            .sum();
+}
+
+    @GetMapping("/category/{cat}")
+    public List<Expense> getByCategory(@PathVariable String cat){
+        return expenseRepository.findAll()
+            .stream()
+            .filter(e -> e.getCategory().equalsIgnoreCase(cat))
+            .toList();
+}
 }
