@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    background: #f4f6f9;
+    transition: 0.3s;
+}
+
+/* DARK MODE */
+body.dark {
+    background: #1e1e2f;
+    color: white;
+}
+
+body.dark .card,
+body.dark .form,
+body.dark .chart-box,
+body.dark .item {
+    background: #2b2b3c;
+    color: white;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    background: linear-gradient(180deg, #172b4d, #1f4068);
+    color: white;
+    padding: 20px;
+    height: 100vh;
+}
+
+.sidebar button {
+    margin-top: 20px;
+    padding: 8px;
+    width: 100%;
+    border: none;
+    background: #00c6ff;
+    color: white;
+    border-radius: 5px;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 25px;
+}
+
+/* SEARCH */
+#search {
+    padding: 10px;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+/* FORM */
+.form {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    animation: fadeIn 0.5s;
+}
+
+.form input {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.form button {
+    padding: 10px;
+    background: #0052cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 15px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.total { background: linear-gradient(45deg,#36d1dc,#5b86e5); }
+.weekly { background: linear-gradient(45deg,#ff9a9e,#fad0c4); }
+.monthly { background: linear-gradient(45deg,#f6d365,#fda085); }
+
+/* CHART */
+.chart-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* LIST */
+.item {
+    background: white;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    animation: fadeIn 0.3s;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+button {
+    cursor: pointer;
+}
